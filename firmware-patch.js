@@ -1,7 +1,18 @@
-/** Release pins for raw files. 1.3.5.0+c is the hardware-tested v0.6 binary. */
+/** SHA-256 pins for the inputs, patches and hardware-tested 1.3.5.0+c release. */
 export const IMAGE_SIZE = 589964;
 export const OUTPUT_NAME = 'Sealegs.1.3.5.0+c.bin';
 export const DELTA_SHA = 'fb2123d69e6ec0ba2ccb2d6000a91c100537a9cc09dfac42cd1e268a125493f3';
+const STOCK_PATCH = Object.freeze({
+  file: './assets/stock-to-redux.delta', size: 163913,
+  hash: '1adc7a814b2adc08cc74fa6459ec1d54511926f3019f066591528611e494ff66',
+});
+const EGGS_PATCH = Object.freeze({file: './assets/redux.delta', size: 9822, hash: DELTA_SHA});
+
+export function patchFor(sourceId) {
+  if (sourceId === 'stock') return STOCK_PATCH;
+  if (sourceId === 'eggs' || sourceId === 'bright') return EGGS_PATCH;
+  throw new Error('Choose official Sealegs 1.3.5.0 or an eligible full Seal Eggs build.');
+}
 export const FILES = Object.freeze({
   stock: {name: 'Intellijel Sealegs 1.3.5.0', hash: 'ca90eb8f0d7e491d548597fab696bca6d54f30b8bbda5b669c3a426508d8adcf'},
   eggs: {name: 'Seal Eggs, full build', hash: '62842329515e79bb7c9c0cb3d9a4783c0cb6cd73d66ee6c4021668a0ddc0358b'},
@@ -63,12 +74,14 @@ export function applyRecords(bytes, delta) {
 export async function patchRedux(input, deltaInput) {
   const source = await identify(input);
   if (source.id === 'redux') throw new Error('This file already matches Seal Eggs Redux 1.3.5.0+c.');
-  if (source.id === 'stock') throw new Error('Prepare a full Seal Eggs base with BRIBERY’s patcher first.');
+  const expected = patchFor(source.id);
   const bytes = new Uint8Array(source.buffer);
-  if (source.id === 'bright') normalizeBright(bytes);
-  if (await digest(bytes) !== FILES.eggs.hash) throw new Error('The intermediate Seal Eggs image failed verification.');
+  if (source.id === 'bright') {
+    normalizeBright(bytes);
+    if (await digest(bytes) !== FILES.eggs.hash) throw new Error('The intermediate Seal Eggs image failed verification.');
+  }
   const delta = deltaInput?.slice(0);
-  if (!(delta instanceof ArrayBuffer) || delta.byteLength !== 9822 || await digest(delta) !== DELTA_SHA) throw new Error('The Redux patch data failed verification.');
+  if (!(delta instanceof ArrayBuffer) || delta.byteLength !== expected.size || await digest(delta) !== expected.hash) throw new Error('The Redux patch data failed verification.');
   applyRecords(bytes, delta);
   if (await digest(bytes) !== FILES.redux.hash) throw new Error('The finished firmware failed its SHA-256 check.');
   return bytes.buffer;

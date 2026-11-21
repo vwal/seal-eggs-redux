@@ -27,9 +27,13 @@ LINE = "#BBCFCB"
 TINT = "#EDF5F2"
 PALE = "#F5F8F7"
 WHITE = "#FFFFFF"
-LICENSE_URL = "https://vwal.github.io/seal-eggs-redux/LICENSE.txt"
+SITE = "https://vwal.github.io/seal-eggs-redux/"
+LICENSE_URL = SITE + "LICENSE.txt"
+SEAL_EGGS_NOTICE_PATH = "notices/Seal-Eggs-LICENSE.md"
+SEAL_EGGS_LICENSE_URL = SITE + SEAL_EGGS_NOTICE_PATH
 REPOSITORY = Path(__file__).resolve().parents[2]
-NOTICES = ("LICENSE.txt", "THIRD-PARTY.md", "notices/Beads-MIT.txt",
+NOTICES = ("LICENSE.txt", "THIRD-PARTY.md", SEAL_EGGS_NOTICE_PATH,
+           "notices/Beads-MIT.txt", "notices/LICENSE-beads.txt",
            "vendor/INTELLIJEL-LICENSE.txt", "vendor/WEBDFU-LICENSE.txt")
 
 
@@ -185,19 +189,28 @@ def draw_pdf(filename, title, pages, size):
                 y -= gap * (1 if kind == "heading" else .38)
             b.draw(c, m, y)
             y -= b.height
-        line(c, m, 41, w - m, LINE)
+        line(c, m, 42, w - m, LINE)
         c.setFont("Helvetica", 8.2)
         c.setFillColor(color(MUTED))
         attribution = "© 2026 vwal  ·  Attribution / No Sale  ·  "
-        c.drawString(m, 26, attribution)
+        c.drawString(m, 31, attribution)
         link_x = m + c.stringWidth(attribution, "Helvetica", 8.2)
         license_label = LICENSE_URL.removeprefix("https://")
         c.setFillColor(color(TEAL))
-        c.drawString(link_x, 26, license_label)
-        c.linkURL(LICENSE_URL, (link_x, 23, link_x + c.stringWidth(license_label, "Helvetica", 8.2), 35),
+        c.drawString(link_x, 31, license_label)
+        c.linkURL(LICENSE_URL, (link_x, 29, link_x + c.stringWidth(license_label, "Helvetica", 8.2), 39),
                   relative=0, thickness=0)
         c.setFillColor(color(MUTED))
-        c.drawRightString(w - m, 26, f"{title}   /   {index} of {len(pages)}")
+        c.drawRightString(w - m, 31, f"{title}   /   {index} of {len(pages)}")
+        notice = "Required Notice: Copyright 2026 Bribery (https://thisisbribery.com)"
+        c.drawString(m, 20, notice)
+        notice_x = m + c.stringWidth(notice + "   ·   ", "Helvetica", 8.2)
+        notice_label = SEAL_EGGS_LICENSE_URL.removeprefix("https://")
+        c.setFillColor(color(TEAL))
+        c.drawString(notice_x, 20, notice_label)
+        c.linkURL(SEAL_EGGS_LICENSE_URL,
+                  (notice_x, 18, notice_x + c.stringWidth(notice_label, "Helvetica", 8.2), 28),
+                  relative=0, thickness=0)
         c.showPage()
     c.save()
     # Printed copies carry the legible URL. Digital copies also contain the

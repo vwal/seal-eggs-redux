@@ -29,7 +29,7 @@
       <h1 id="name">Seal Eggs <em>Redux</em></h1>
       <p class="dek">Keep your favorite delay character in each model. Launch a fading pitch throw, shuffle a drum loop or switch the recording quality inside Seal Beads.</p>
       <div class="actions"><a class="primary" href="#patcher">Build firmware</a><a class="secondary" href="#guides">Get the guides</a></div>
-      <p class="version"><span>Stock <b>1.3.5.0</b></span><i aria-hidden="true">→</i><span><b>Seal Eggs</b></span><i aria-hidden="true">→</i><span>Redux <b>1.3.5.0+c</b></span></p>
+      <p class="version"><span>Stock <b>1.3.5.0</b></span><i aria-hidden="true">→</i><span>Redux <b>1.3.5.0+c</b></span></p>
     </div>
     <figure class="scope" aria-labelledby="audition-title">
       <div class="scope-top"><figcaption id="audition-title">Microloops audition</figcaption><span>120 BPM</span></div>
@@ -47,11 +47,11 @@
   <section class="work-section" aria-label="Patch and install">
     <div class="work-card" id="patcher"><p class="kicker">Step 1 · Local file</p><h2>Build your firmware</h2>
       <ol class="prep">
-        <li>Download the <a href="https://intellijel.github.io/firmware/">original <code>Sealegs.1.3.5.0.bin</code></a> from the <a href="https://github.com/intellijel/firmware/tree/master/bin">official Intellijel firmware directory</a>.</li>
-        <li>Open that file in <a href="https://www.thisisbribery.com/sealeggs/">BRIBERY’s Seal Eggs patcher</a>. Select Live reverse, Character, Digi Doppler, Tape pickup, BBD Light, Seal Beads and Microloops. Use the full build with or without Tape Bright, then download it.</li>
-        <li>Select that <strong>full Seal Eggs file</strong> below. Save the finished <code>Sealegs.1.3.5.0+c.bin</code>. Only the final file needs flashing.</li>
+        <li>Download the <a href="https://intellijel.github.io/firmware/">original <code>Sealegs.1.3.5.0.bin</code></a> from <a href="https://github.com/intellijel/firmware/tree/master/bin">Intellijel’s firmware directory</a>.</li>
+        <li>Select the original file below to build Redux directly. Save <code>Sealegs.1.3.5.0+c.bin</code> and use it in the USB step.</li>
       </ol>
       <redux-patcher></redux-patcher>
+      <p class="firmware-notices"><a href="FIRMWARE-NOTICES.txt" download>Download firmware credits and licenses</a> to keep with your file.<br>Required Notice: Copyright 2026 Bribery (https://thisisbribery.com)</p>
     </div>
     <div class="work-card" id="flasher"><p class="kicker">Step 2 · USB</p><h2>Flash your Sealegs</h2>
       <p>Use desktop Chrome or Edge and a USB data cable. Power off the rack, connect the computer to the <strong>rear USB port</strong>, then hold the <strong>rear BOOT button</strong> as you power the rack on. Release BOOT and choose your saved Redux file below. After the write and readback verification, use <strong>Restart module</strong>, then power down, disconnect USB and power on normally.</p>
@@ -60,7 +60,8 @@
     <noscript><p>Enable JavaScript to build or flash firmware. The guides and official updater links are available below.</p></noscript>
   </section>
   <details class="how"><summary>How the patch and USB verification work</summary><div>
-    <p>Make the first patch at BRIBERY’s site. Here, your browser verifies the full Seal Eggs file against the SHA-256 for the selected variant, applies the Redux delta to a copy in memory and checks the result against the published <strong>1.3.5.0+c</strong> release hash. Full builds with Tape Bright on or off produce the same file, byte for byte. Your selected file stays on this computer.</p>
+    <p>Your browser checks the SHA-256 of the official <strong>1.3.5.0</strong> file, applies a patch containing BRIBERY’s Seal Eggs features and the Redux changes to a copy in memory, then verifies the result against the <strong>1.3.5.0+c</strong> release hash before offering the download. Your firmware stays on this computer.</p>
+    <p>If you already have a full Seal Eggs build with Tape Bright on or off, you can also select it here. The patcher recognizes either version and produces the same Redux file. In Redux you can switch Tape Bright on the module.</p>
     <p>The USB step independently verifies the file you select. The updater checks the device’s flash layout, writes the image and reads it back for comparison. Keep power and USB connected until the updater reports completion. Restore stock before seeking official product support. <a href="https://github.com/intellijel/firmware/blob/master/docs/Sealegs.html">Intellijel’s Sealegs boot procedure</a></p>
     <dl class="hashes"><dt>Stock SHA-256</dt><dd><code>ca90eb8f0d7e491d548597fab696bca6d54f30b8bbda5b669c3a426508d8adcf</code></dd><dt>Full Seal Eggs SHA-256 · Tape Bright off</dt><dd><code>62842329515e79bb7c9c0cb3d9a4783c0cb6cd73d66ee6c4021668a0ddc0358b</code></dd><dt>Full Seal Eggs SHA-256 · Tape Bright on</dt><dd><code>d32d1886689b42c69fa746dd17d9519d63a81026b49dc6e8e85579b9ee7deb86</code></dd><dt>Redux 1.3.5.0+c SHA-256</dt><dd><code>0eec5c430a07f188f76a4efe243d1f160b7453ffdf0912da6f56614dbfb6de8f</code></dd></dl>
   </div></details>
@@ -97,8 +98,8 @@
   <section class="credits section"><div class="section-title"><p class="kicker">Project notes</p><h2>Credits and release terms</h2></div>
     <div class="play-grid"><article><h3>Built on Seal Eggs</h3><p><strong>BRIBERY</strong> created the upstream modifications, adapted Seal Beads to Sealegs and wrote Microloops. <strong>Émilie Gillet</strong> created Mutable Instruments Beads and stmlib. <strong>Intellijel</strong> designed Sealegs and supplies the original firmware and updater.</p><p><a href="https://www.thisisbribery.com/sealeggs/">BRIBERY’s Seal Eggs</a> · <a href="https://ko-fi.com/thisisbribery">Support BRIBERY</a> · <a href="https://github.com/pichenettes/eurorack">Mutable Instruments source</a></p>
       <p>Redux firmware changes, release tools and field guides by <strong>vwal</strong>. <a href="https://www.buymeacoffee.com/vwal">Buy me a coffee</a></p></article>
-    <article><h3>Free to use and share</h3><p>Our original Redux contributions use an attribution and no-sale license. Intellijel may commercially integrate and distribute <strong>vwal’s original firmware changes in the Redux delta over BRIBERY’s Seal Eggs</strong> in its official products. Rights to BRIBERY’s code must be obtained separately. Other components keep their own terms, including MIT for Beads/stmlib and ISC for webdfu. You can sell music made with this firmware.</p>
-      <p><a href="LICENSE.txt">Redux license</a> · <a href="notices/Beads-MIT.txt">Beads MIT notice</a> · <a href="https://github.com/vwal/seal-eggs-redux/blob/main/THIRD-PARTY.md">All credits and notices</a></p></article></div>
+    <article><h3>Free to use and share</h3><p>BRIBERY licenses his Seal Eggs work under PolyForm Noncommercial 1.0.0 with additional permission for paid music-making and commercial use by Intellijel. vwal’s original Redux additions have their own attribution and no-sale license. Its Intellijel exception covers vwal’s firmware changes in official Intellijel products. You can perform, record and sell music made with Redux.</p>
+      <p><a href="https://github.com/thisisbribery/SealEggs_v1/blob/da1abaebfa1674bdf052d01a4a9d8c20c8ec87f4/LICENSE.md">BRIBERY’s license and permissions</a> · <a href="LICENSE.txt">Redux license</a> · <a href="notices/Beads-MIT.txt">Beads/stmlib MIT notice</a> · <a href="https://github.com/vwal/seal-eggs-redux/blob/main/THIRD-PARTY.md">All credits and notices</a></p></article></div>
     <details><summary>What was tested</summary><div><p>An independent build reproduced <strong>Seal Eggs Redux 1.3.5.0+c</strong> byte for byte. All 27 automated firmware test suites passed, covering audio processing, button gestures, saved preferences and timing diagnostics. Listening tests on Sealegs hardware covered the model characters, Pitch Throw, Beads and all three Microloops ranges with a clock. Hardware testing covered a selection of patches and did not measure real-time deadlines.</p><p>For clocked Microloops, try a short trigger per quarter note. At 120 BPM, a simulated 50% square wave could register twice per beat. A 10 ms trigger registered once. The audition above uses that short-trigger timing.</p></div></details>
   </section>
 </div></main>

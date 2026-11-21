@@ -1,0 +1,285 @@
+Seal Eggs Redux 1.3.5.0+c
+Firmware notices and license texts
+
+Keep this notice with your generated firmware. Your local file includes
+Intellijel’s Sealegs firmware, BRIBERY’s Seal Eggs work, Beads/stmlib
+code by Émilie Gillet and the Redux additions by vwal. Intellijel retains
+rights in its underlying firmware. A license for the modifications does
+not grant redistribution rights in Intellijel’s firmware.
+
+Required Notice: Copyright 2026 Bribery (https://thisisbribery.com)
+
+BRIBERY’s Seal Eggs terms, including the mandatory notice and the
+permissions for professional music and for Intellijel
+https://github.com/thisisbribery/SealEggs_v1/blob/da1abaebfa1674bdf052d01a4a9d8c20c8ec87f4/LICENSE.md
+
+vwal’s license for the original Redux contributions
+https://vwal.github.io/seal-eggs-redux/LICENSE.txt
+
+Beads and stmlib MIT notice
+https://github.com/thisisbribery/SealEggs_v1/blob/da1abaebfa1674bdf052d01a4a9d8c20c8ec87f4/LICENSE-beads.txt
+
+Release credits
+https://vwal.github.io/seal-eggs-redux/THIRD-PARTY.md
+
+BRIBERY  |  Seal Eggs license and additional permissions
+========================================================
+
+# Seal Eggs licence
+
+Required Notice: Copyright 2026 Bribery (https://thisisbribery.com)
+
+Seal Eggs by Bribery is licensed under the PolyForm Noncommercial License 1.0.0 (full text at the end of this file), plus the additional permissions below.
+
+## What this covers
+
+Bribery's own Seal Eggs work: the mods and their code, the patch data in `mods.js`, the flasher page, and Bribery's changes to the Beads and stmlib code inside Seal Beads. Seal Microloops is original Bribery code and is covered in full.
+
+## What this does not cover
+
+- **Intellijel's Sealegs firmware.** It belongs to Intellijel. Seal Eggs never includes it: you supply your own copy of the official file.
+- **Mutable Instruments Beads and stmlib code** by Emilie Gillet inside Seal Beads. That code stays under the MIT licence in [LICENSE-beads.txt](LICENSE-beads.txt), and its notice must be kept with every copy.
+
+## In plain English
+
+- **Free for noncommercial use.** Use it, study it, change it and share it for free.
+- **Forks are welcome**, on the same noncommercial terms. Keep the `Required Notice:` line above, include or link these terms, and credit Bribery's Seal Eggs.
+- **Make and sell music with it.** See the first additional permission below.
+- **Don't sell it.** No selling the firmware, the patch data, changed versions, pre-flashed modules or paid packs that include it, and no bundling it with a commercial product, without written permission from Bribery.
+
+## Additional permissions
+
+These are granted by Bribery on top of the PolyForm Noncommercial License 1.0.0.
+
+### Music
+
+You may use Seal Eggs to make, perform, record, release and sell music and sound, including paid gigs, sessions, releases and other professional music work. This covers the music and sound you make with it. It does not allow selling or distributing Seal Eggs itself for money.
+
+### Commercial exception for Intellijel
+
+Intellijel, the maker of the Sealegs, may use, copy, change and distribute Bribery's Seal Eggs work for any purpose, including commercial use, for example by including Seal Eggs modes in official Sealegs firmware. This permission is for Intellijel only and can't be passed on, except to users as part of Intellijel's own products.
+
+## Commercial licence
+
+For any other commercial use, contact Bribery through https://thisisbribery.com or [@thisisbribery](https://www.instagram.com/thisisbribery/) on Instagram.
+
+---
+
+# PolyForm Noncommercial License 1.0.0
+
+<https://polyformproject.org/licenses/noncommercial/1.0.0>
+
+## Acceptance
+
+In order to get any license under these terms, you must agree to them as both strict obligations and conditions to all your licenses.
+
+## Copyright License
+
+The licensor grants you a copyright license for the software to do everything you might do with the software that would otherwise infringe the licensor's copyright in it for any permitted purpose.  However, you may only distribute the software according to [Distribution License](#distribution-license) and make changes or new works based on the software according to [Changes and New Works License](#changes-and-new-works-license).
+
+## Distribution License
+
+The licensor grants you an additional copyright license to distribute copies of the software.  Your license to distribute covers distributing the software with changes and new works permitted by [Changes and New Works License](#changes-and-new-works-license).
+
+## Notices
+
+You must ensure that anyone who gets a copy of any part of the software from you also gets a copy of these terms or the URL for them above, as well as copies of any plain-text lines beginning with `Required Notice:` that the licensor provided with the software.  For example:
+
+> Required Notice: Copyright Yoyodyne, Inc. (http://example.com)
+
+## Changes and New Works License
+
+The licensor grants you an additional copyright license to make changes and new works based on the software for any permitted purpose.
+
+## Patent License
+
+The licensor grants you a patent license for the software that covers patent claims the licensor can license, or becomes able to license, that you would infringe by using the software.
+
+## Noncommercial Purposes
+
+Any noncommercial purpose is a permitted purpose.
+
+## Personal Uses
+
+Personal use for research, experiment, and testing for the benefit of public knowledge, personal study, private entertainment, hobby projects, amateur pursuits, or religious observance, without any anticipated commercial application, is use for a permitted purpose.
+
+## Noncommercial Organizations
+
+Use by any charitable organization, educational institution, public research organization, public safety or health organization, environmental protection organization, or government institution is use for a permitted purpose regardless of the source of funding or obligations resulting from the funding.
+
+## Fair Use
+
+You may have "fair use" rights for the software under the law. These terms do not limit them.
+
+## No Other Rights
+
+These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else.  These terms do not imply any other licenses.
+
+## Patent Defense
+
+If you make any written claim that the software infringes or contributes to infringement of any patent, your patent license for the software granted under these terms ends immediately. If your company makes such a claim, your patent license ends immediately for work on behalf of your company.
+
+## Violations
+
+The first time you are notified in writing that you have violated any of these terms, or done anything with the software not covered by your licenses, your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to correct past violations, within 32 days of receiving notice.  Otherwise, all your licenses end immediately.
+
+## No Liability
+
+***As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim.***
+
+## Definitions
+
+The **licensor** is the individual or entity offering these terms, and the **software** is the software the licensor makes available under these terms.
+
+**You** refers to the individual or entity agreeing to these terms.
+
+**Your company** is any legal entity, sole proprietorship, or other kind of organization that you work for, plus all organizations that have control over, are under the control of, or are under common control with that organization.  **Control** means ownership of substantially all the assets of an entity, or the power to direct its management and policies by vote, contract, or otherwise.  Control can be direct or indirect.
+
+**Your licenses** are all the licenses granted to you for the software under these terms.
+
+**Use** means anything you do with the software requiring one of your licenses.
+
+Émilie Gillet  |  Beads and stmlib
+==================================
+
+Seal Beads (a Seal Eggs mod) contains compiled code from Mutable Instruments Beads and stmlib
+(https://github.com/pichenettes/eurorack), heavily modified. That code is used under the MIT licence.
+The Beads and stmlib source files carry copyright notices from 2012 to 2021 by Emilie Gillet; the licence text is:
+
+Copyright 2019 Emilie Gillet.
+
+Author: Emilie Gillet (emilie.o.gillet@gmail.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+See http://creativecommons.org/licenses/MIT/ for more information.
+
+vwal  |  Original Seal Eggs Redux contributions
+===============================================
+
+Seal Eggs Redux Attribution – No Sale License 1.0
+LicenseRef-Seal-Eggs-Redux-No-Sale-1.0
+Copyright (c) 2026 vwal
+
+1. Scope
+These terms apply to original work for which vwal controls the rights in
+Seal Eggs Redux, including the new firmware additions, patches, website,
+reference publications and their copyrightable derivatives. Intellijel
+firmware, BRIBERY's Seal Eggs, Mutable Instruments Beads, stmlib, webdfu
+and other pre-existing material have their own owners and terms. This
+license grants no rights in their firmware, code, trademarks or artwork.
+All independent permissions and applicable third-party notices survive.
+
+2. Grant and attribution
+You may use, study, copy, adapt, merge, compile and share the covered
+work without charge, subject to this license. Include vwal's copyright,
+the complete license and applicable third-party notices with copies or
+substantial portions. Mark your changes. For print, retain a readable
+attribution and link to the full license. Free derivatives must preserve
+these conditions on the covered portions. Use in paid performances,
+studio work, lessons, and the sale or licensing of music and recordings
+made with the module are permitted. The license does not attach to that
+creative output through use of the tools.
+
+3. No sale or paid supply
+Except as permitted in section 4 or by separate written permission, you
+may not supply the covered work or its derivatives for payment, whether
+as a download, update, subscription, paid bundle, product, preinstalled
+module or paid installation, build, modification or hosting service.
+Describing an included component as a free bonus does not remove this
+condition. Unconditional voluntary donations are permitted. Access and
+delivery may not depend on a donation, membership or purchase.
+
+4. Official Intellijel exception for the Redux firmware delta
+This exception applies only to vwal's original firmware changes supplied
+in the Redux delta over BRIBERY's Seal Eggs. BRIBERY separately licenses
+its own Seal Eggs work under the PolyForm Noncommercial License 1.0.0
+with express additional permissions for music and for Intellijel. The
+scope of each grant is determined by its respective author. See
+notices/Seal-Eggs-LICENSE.md for BRIBERY's complete terms. Third-party
+terms also apply when their material is present in a combined image.
+
+Intellijel, the manufacturer of Sealegs, may use, modify, incorporate,
+reproduce, sublicense, distribute and sell those Redux changes in its
+official products, firmware, updates and associated services without
+further permission or a fee. This includes contractors and authorized
+distributors acting on its behalf solely for that official integration
+and distribution, and the subsequent resale of those official products.
+Intellijel may license the resulting products under its own terms while
+preserving the applicable copyright, attribution and license notices.
+This exception overrides the no-sale conditions on vwal's work for those
+uses only. It confers no right to sublicense BRIBERY's work or pass on
+BRIBERY's separate Intellijel permission. Other rights holders' terms
+still apply. No endorsement or obligation by Intellijel is implied.
+
+5. Warranty and liability
+The covered work is provided as is, without express or implied warranties,
+including merchantability, fitness for a particular purpose and
+noninfringement. To the extent permitted by applicable law, the authors
+and rights holders shall not be liable for any claim, damage or liability
+arising out of the work, its distribution or its use. Nothing in this
+license limits rights that applicable law makes non-excludable.
+
+This custom license applies only to Redux contributions. The MIT permissions
+for Beads/stmlib and the Intellijel updater libraries and the ISC permissions
+for webdfu remain in effect for their respective components. For upstream
+credits and notices see THIRD-PARTY.md.
+
+Intellijel  |  Browser updater software
+=======================================
+
+MIT License
+
+Copyright (c) 2025 intellijel designs inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+webdfu contributors  |  Browser updater software
+================================================
+
+Copyright (c) 2016, Devan Lai
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+

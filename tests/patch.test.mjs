@@ -2,24 +2,43 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {test} from 'node:test';
-import {applyRecords, DELTA_SHA, FILES, identify, IMAGE_SIZE, patchRedux, readFirmware} from '../firmware-patch.js';
+import {applyRecords, DELTA_SHA, FILES, identify, IMAGE_SIZE, patchFor, patchRedux, readFirmware} from '../firmware-patch.js';
 
 const buffer = data => data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength);
 const hash = data => createHash('sha256').update(new Uint8Array(data)).digest('hex');
 const delta = buffer(await readFile(new URL('../assets/redux.delta', import.meta.url)));
+const stockDelta = buffer(await readFile(new URL('../assets/stock-to-redux.delta', import.meta.url)));
 const stockPath = process.env.SEALEGS_STOCK;
 const basePath = process.env.SEALEGS_BASE;
 const brightPath = process.env.SEALEGS_BRIGHT;
 const releasePath = process.env.SEALEGS_REDUX;
 
-test('release delta integrity and record bounds', () => {
-  assert.equal(hash(delta), DELTA_SHA);
-  assert.equal(delta.byteLength, 9822);
+function verifyMask(source, target, patch, expectedChanges) {
   const mask = new Uint8Array(IMAGE_SIZE);
-  applyRecords(mask, delta);
-  assert.ok(mask.some(byte => byte !== 0));
-  applyRecords(mask, delta);
-  assert.ok(mask.every(byte => byte === 0));
+  applyRecords(mask, patch);
+  const before = new Uint8Array(source);
+  const after = new Uint8Array(target);
+  let changed = 0;
+  for (let i = 0; i < IMAGE_SIZE; i++) {
+    assert.equal(mask[i], before[i] ^ after[i]);
+    changed += mask[i] !== 0;
+  }
+  assert.equal(changed, expectedChanges);
+}
+
+test('stock and compatibility assets match the release pins and bounds', () => {
+  assert.equal(hash(delta), DELTA_SHA);
+  for (const [sourceId, data] of [['stock', stockDelta], ['eggs', delta], ['bright', delta]]) {
+    const patch = patchFor(sourceId);
+    assert.equal(hash(data), patch.hash);
+    assert.equal(data.byteLength, patch.size);
+    const mask = new Uint8Array(IMAGE_SIZE);
+    applyRecords(mask, data);
+    assert.ok(mask.some(byte => byte !== 0));
+    applyRecords(mask, data);
+    assert.ok(mask.every(byte => byte === 0));
+  }
+  assert.throws(() => patchFor('redux'));
 });
 test('refuses unknown or malformed firmware before device use', async () => {
   for (const input of [new ArrayBuffer(0), new ArrayBuffer(IMAGE_SIZE - 1), new ArrayBuffer(IMAGE_SIZE), new ArrayBuffer(IMAGE_SIZE + 1)]) {
@@ -41,12 +60,23 @@ test('invalid headers, truncation and out-of-bounds records', () => {
   assert.throws(() => applyRecords(new Uint8Array(IMAGE_SIZE), overlap), /bounds/);
 });
 
-test('official stock is recognized for preparation or rollback and cannot be patched directly', {skip: !stockPath}, async () => {
+test('official stock patches directly to the tested release and its original bytes remain intact', {skip: !stockPath || !releasePath}, async () => {
   const stock = buffer(await readFile(stockPath));
+  const release = buffer(await readFile(releasePath));
   assert.equal((await identify(stock)).id, 'stock');
-  await assert.rejects(patchRedux(stock, delta), /Prepare a full Seal Eggs/);
+  const output = await patchRedux(stock, stockDelta);
+  assert.deepEqual(new Uint8Array(output), new Uint8Array(release));
+  assert.equal(hash(output), FILES.redux.hash);
+  assert.equal(hash(stock), FILES.stock.hash);
+  verifyMask(stock, release, stockDelta, 155303);
+  await assert.rejects(patchRedux(stock, delta), /patch data failed/);
+  const corrupt = stockDelta.slice(0);
+  new Uint8Array(corrupt)[100] ^= 1;
+  await assert.rejects(patchRedux(stock, corrupt), /patch data failed/);
+  const changedInput = stock.slice(0);
+  new Uint8Array(changedInput)[100] ^= 1;
+  await assert.rejects(patchRedux(changedInput, stockDelta), /Unrecognized SHA/);
 });
-
 test('both allowed local base files produce identical release bytes and the mask contains only Redux differences', {skip: !basePath || !brightPath || !releasePath}, async () => {
   const base = buffer(await readFile(basePath));
   const bright = buffer(await readFile(brightPath));
@@ -69,18 +99,9 @@ test('both allowed local base files produce identical release bytes and the mask
   await assert.rejects(patchRedux(base, badDelta), /patch data failed/);
   await assert.rejects(patchRedux(release, delta), /already matches/);
 
-  const mask = new Uint8Array(IMAGE_SIZE);
-  applyRecords(mask, delta);
-  const src = new Uint8Array(base);
+  verifyMask(base, release, delta, 9072);
+  await assert.rejects(patchRedux(base, stockDelta), /patch data failed/);
+  const normal = new Uint8Array(base);
   const alt = new Uint8Array(bright);
-  const dst = new Uint8Array(release);
-  let changed = 0;
-  let brightChanges = 0;
-  for (let i = 0; i < IMAGE_SIZE; i++) {
-    assert.equal(mask[i], src[i] ^ dst[i]);
-    changed += mask[i] !== 0;
-    brightChanges += src[i] !== alt[i];
-  }
-  assert.equal(changed, 9072);
-  assert.equal(brightChanges, 6);
+  assert.equal(normal.reduce((count, byte, i) => count + Number(byte !== alt[i]), 0), 6);
 });

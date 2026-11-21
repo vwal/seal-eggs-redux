@@ -1,4 +1,4 @@
-import {FILES, OUTPUT_NAME, identify, readFirmware, patchRedux} from './firmware-patch.js';
+import {OUTPUT_NAME, patchFor, identify, readFirmware, patchRedux} from './firmware-patch.js';
 import {connectSealegs, flashSealegs, restartSealegs, disconnectSealegs} from './transport.js';
 
 const message = error => error instanceof Error ? error.message : String(error);
@@ -12,11 +12,11 @@ class ReduxPatcher extends HTMLElement {
   connectedCallback() {
     if (this.childElementCount) return;
     this.innerHTML = `
-      <label class="tool-file">Full Seal Eggs .bin
+      <label class="tool-file">Firmware to patch (.bin)
         <input type="file" accept=".bin,application/octet-stream" aria-describedby="patch-feedback">
       </label>
-      <p class="tool-status" id="patch-feedback" role="status" aria-live="polite">Choose the full Seal Eggs build, with or without Tape Bright. Your file stays in this browser.</p>
-      <p class="tool-help" data-guide hidden>Open <a href="https://www.thisisbribery.com/sealeggs/" target="_blank" rel="noopener noreferrer">BRIBERY’s patcher</a> and choose <a href="https://intellijel.github.io/firmware/" target="_blank" rel="noopener noreferrer">Intellijel’s original Sealegs.1.3.5.0.bin</a>. Enable Live reverse, Character, Digi Doppler, Tape pickup, BBD Light, Seal Beads and Seal Microloops. Tape Bright can be on or off. Download the resulting .bin and choose it here.</p>
+      <p class="tool-status" id="patch-feedback" role="status" aria-live="polite">Choose the official Sealegs.1.3.5.0.bin. Your file stays in this browser.</p>
+      <p class="tool-help" data-guide hidden>Get the original Sealegs 1.3.5.0 file from <a href="https://intellijel.github.io/firmware/" target="_blank" rel="noopener noreferrer">Intellijel</a>. The full Seal Eggs build is also supported, with or without Tape Bright.</p>
       <div class="tool-actions">
         <button type="button" class="button" data-build disabled>Build Redux firmware</button>
         <a class="button" data-download download="Sealegs.1.3.5.0+c.bin" hidden>Download patched .bin</a>
@@ -42,17 +42,14 @@ class ReduxPatcher extends HTMLElement {
       guide.hidden = true;
       const file = input.files[0];
       if (!file) {
-        announce(feedback, 'Choose a full Seal Eggs .bin to begin.');
+        announce(feedback, 'Choose the official Sealegs 1.3.5.0 .bin to begin.');
         return;
       }
       announce(feedback, 'Checking the firmware identity…');
       try {
         const checked = await readFirmware(file);
         if (sequence !== selection) return;
-        if (checked.id === 'stock') {
-          guide.hidden = false;
-          announce(feedback, 'Official stock 1.3.5.0 detected. Prepare the full Seal Eggs base in BRIBERY’s patcher first.');
-        } else if (checked.id === 'redux') {
+        if (checked.id === 'redux') {
           announce(feedback, 'This file already matches Redux 1.3.5.0+c. Choose it in the flasher below.', 'good');
         } else {
           source = checked;
@@ -74,7 +71,7 @@ class ReduxPatcher extends HTMLElement {
       clearOutput();
       announce(feedback, 'Applying the Redux patch and checking the result…');
       try {
-        const url = new URL('./assets/redux.delta', import.meta.url);
+        const url = new URL(patchFor(source.id).file, import.meta.url);
         const response = await fetch(url, {credentials: 'omit', referrerPolicy: 'no-referrer'});
         if (!response.ok) throw new Error('The Redux patch could not be loaded. Reload the page and try again.');
         const patched = await patchRedux(source.buffer, await response.arrayBuffer());

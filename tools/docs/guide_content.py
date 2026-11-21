@@ -78,7 +78,7 @@ global_rows = [
     ["MIX", "Dry to wet. In Send/Return mode this sets the wet output level.", "—"],
 ]
 
-q1 = page("Buttons and model options", "Keep this page by the panel. ALT means hold FREEZE. A short press and a one-second chord can do different things.",
+q1 = page("Buttons and model options", "ALT means hold FREEZE. To install Redux, patch official 1.3.5.0 on the <link href='https://vwal.github.io/seal-eggs-redux/' color='#165F56'><u>release site</u></link>, then flash the saved +c file.",
           H("Native buttons and shortcuts"), native_buttons, H("Options for the current model"), open_options, options,
           P("MOD SYNC breathes white in options, alternating with teal for active Beads or orange for active Microloops. Knobs, sliders and CV keep playing. TAP's ordinary tempo pulse is hidden here."))
 
@@ -125,7 +125,7 @@ q4 = page("Alternate engines and startup", "Use this side for alternate-engine c
           ], .23, True),
           P("Normal startup displays four numeric digits on FREEZE / TAP / DELAY SYNC / MOD SYNC for about three seconds. Colours 0-9 are blue, cyan, green, yellow, orange, red, magenta, purple, grey and white. The community release label is 1.3.5.0+c."), credit_short)
 
-n1 = page("Release controls at a glance", "New features over Intellijel 1.3.5.0. This side covers the three native delay models. Turn over for the alternate engines.",
+n1 = page("Release controls at a glance", "Patch official 1.3.5.0 on the <link href='https://vwal.github.io/seal-eggs-redux/' color='#165F56'><u>Redux site</u></link> and flash the saved +c file. This side covers Tape, BBD and Digi. Turn over for the alternate engines.",
           open_options, options, H("What each native option changes"),
           pairs("Selection", "Sound or gesture", [
               ["Character · all models", "The NOISE knob becomes tape grunge, BBD chip decay or Digi data corruption. Each model saves its own assignment. The ALT + MOD SYNC long shortcut still works in normal play."],
@@ -220,12 +220,12 @@ r5 = page("Patches and diagnostics", "Use a stable input, a known clock and the 
           H("Sources and credits"), credit,
           P('<link href="https://intellijel.com/shop/eurorack/sealegs/" color="#165F56"><u>Intellijel Sealegs and official manual</u></link>  ·  <link href="https://www.thisisbribery.com/sealeggs/" color="#165F56"><u>BRIBERY’s Seal Eggs</u></link>  ·  <link href="https://vwal.github.io/seal-eggs-redux/" color="#165F56"><u>Redux patcher and flasher</u></link>'))
 
-r6 = page("Install or restore firmware", "Build the full Seal Eggs image first, then apply Redux to that image. Keep the original Intellijel file for recovery.",
+r6 = page("Install or restore firmware", "Patch your original Intellijel file directly on the Redux site. Keep the stock file for recovery.",
           H("Prepare the release file"),
           pairs("Step", "On the computer", [
-              ["1  Get stock", 'Get the <link href="https://intellijel.github.io/firmware/" color="#165F56"><u>original Sealegs.1.3.5.0.bin</u></link> from Intellijel. The file is also in the <link href="https://github.com/intellijel/firmware/tree/master/bin" color="#165F56"><u>official firmware download directory</u></link>. Keep a copy for recovery and use it as input to BRIBERY’s patcher.'],
-              ["2  Build Seal Eggs", 'Open <link href="https://www.thisisbribery.com/sealeggs/" color="#165F56"><u>BRIBERY’s Seal Eggs patcher</u></link>, load stock and enable Live Reverse, Character, Digi Doppler, Tape Pickup, BBD Light, Seal Beads and Seal Microloops. Leave the separate Tape Bright extra off for the standard full base. Download the full Seal Eggs file.'],
-              ["3  Build Redux", 'Open the <link href="https://vwal.github.io/seal-eggs-redux/" color="#165F56"><u>Redux release site</u></link> and select your full Seal Eggs file. The browser checks its hash, applies the Redux delta and verifies the output. Save <b>Sealegs.1.3.5.0+c.bin</b>. Select that saved file in the flasher when you want to write it to the module.'],
+              ["1  Get stock", 'Get the <link href="https://intellijel.github.io/firmware/" color="#165F56"><u>original Sealegs.1.3.5.0.bin</u></link> from Intellijel. The file is also in the <link href="https://github.com/intellijel/firmware/tree/master/bin" color="#165F56"><u>official firmware download directory</u></link>. Keep this stock file for recovery.'],
+              ["2  Build Redux", 'Open the <link href="https://vwal.github.io/seal-eggs-redux/" color="#165F56"><u>Redux release site</u></link>. In the patcher, select your official <b>Sealegs.1.3.5.0.bin</b>. Build the patched image. The browser checks the stock file, applies the patch locally and verifies the result.'],
+              ["3  Save the result", 'Download <b>Sealegs.1.3.5.0+c.bin</b>. Choose this saved file in the flasher when you are ready to write it to the module.'],
           ], .24),
           H("Flash the module"),
           pairs("Step", "At the rack", [

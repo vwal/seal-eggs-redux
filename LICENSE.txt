@@ -33,10 +33,12 @@ delivery may not depend on a donation, membership or purchase.
 
 4. Official Intellijel exception for the Redux firmware delta
 This exception applies only to vwal's original firmware changes supplied
-in the Redux delta over BRIBERY's Seal Eggs. Permission to use or distribute
-BRIBERY's original code must come from BRIBERY or another independent legal
-basis. The terms for all other third-party portions apply independently,
-including when they are present in a combined firmware image.
+in the Redux delta over BRIBERY's Seal Eggs. BRIBERY separately licenses
+its own Seal Eggs work under the PolyForm Noncommercial License 1.0.0
+with express additional permissions for music and for Intellijel. The
+scope of each grant is determined by its respective author. See
+notices/Seal-Eggs-LICENSE.md for BRIBERY's complete terms. Third-party
+terms also apply when their material is present in a combined image.
 
 Intellijel, the manufacturer of Sealegs, may use, modify, incorporate,
 reproduce, sublicense, distribute and sell those Redux changes in its
@@ -47,8 +49,9 @@ and distribution, and the subsequent resale of those official products.
 Intellijel may license the resulting products under its own terms while
 preserving the applicable copyright, attribution and license notices.
 This exception overrides the no-sale conditions on vwal's work for those
-uses only. Other rights holders' terms still apply. No endorsement or
-obligation by Intellijel is implied.
+uses only. It confers no right to sublicense BRIBERY's work or pass on
+BRIBERY's separate Intellijel permission. Other rights holders' terms
+still apply. No endorsement or obligation by Intellijel is implied.
 
 5. Warranty and liability
 The covered work is provided as is, without express or implied warranties,
