@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Seal Eggs Redux 1.3.5.0+c for Intellijel Sealegs. Build your firmware locally, install over USB and download the printable playing guides.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://vwal.github.io/seal-eggs-redux/">
+  <title>Seal Eggs Redux · Sealegs firmware 1.3.5.0+c</title>
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="vendor/dfu.js"></script>
+  <script defer src="vendor/dfuse.js"></script>
+  <script type="module" src="firmware-tools.js"></script>
+  <script defer src="audition.js"></script>
+</head>
+<body>
+<a class="skip" href="#patcher">Skip to firmware patcher</a>
+<header class="mast"><div class="wrap mast-in">
+  <a class="identity" href="#top"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>vwal <b>/</b> <strong>Firmware</strong></span></a>
+  <nav aria-label="Main navigation"><a href="#patcher">Patcher</a><a href="#features">Features</a><a href="#guides">Guides</a></nav>
+  <button type="button" id="theme" class="theme" role="switch" aria-label="Night mode" aria-checked="false" hidden><i aria-hidden="true"></i><span>Day</span></button>
+</div></header>
+<main id="top"><div class="wrap">
+  <section class="hero" aria-labelledby="name">
+    <div><p class="kicker">Independent firmware for Intellijel Sealegs</p>
+      <h1 id="name">Seal Eggs <em>Redux</em></h1>
+      <p class="dek">Keep your favorite delay character in each model. Launch a fading pitch throw, shuffle a drum loop or switch the recording quality inside Seal Beads.</p>
+      <div class="actions"><a class="primary" href="#patcher">Build firmware</a><a class="secondary" href="#guides">Get the guides</a></div>
+      <p class="version"><span>Stock <b>1.3.5.0</b></span><i aria-hidden="true">→</i><span><b>Seal Eggs</b></span><i aria-hidden="true">→</i><span>Redux <b>1.3.5.0+c</b></span></p>
+    </div>
+    <figure class="scope" aria-labelledby="audition-title">
+      <div class="scope-top"><figcaption id="audition-title">Microloops audition</figcaption><span>120 BPM</span></div>
+      <canvas id="wave" width="840" height="236" aria-label="Waveform of a stereo drum loop and three Microloops settings"></canvas>
+      <div class="cue-keys"><span>Input</span><span>Shuffle A</span><span>Octaves A</span><span>Layered A</span></div>
+      <audio controls preload="metadata" src="media/microloops-120.wav" aria-label="Play the eight-second Microloops comparison"></audio>
+      <p>One bar each. Original drums, Shuffle, then Octaves at 0% and 60% DEPTH. Rendered by the firmware.</p>
+    </figure>
+  </section>
+  <section id="installation" class="before" aria-labelledby="before-title">
+    <div><p class="kicker">Installation</p><h2 id="before-title">Before you flash</h2></div>
+    <div><p>This community release has been tested on Sealegs hardware and in 27 automated firmware suites. It comes <strong>as is</strong>. Install it at your own risk. Custom firmware may affect warranty coverage. Intellijel supports its official firmware.</p>
+    <p>Keep the original <code>Sealegs.1.3.5.0.bin</code> for recovery and note any settings you want to recreate. To return to stock, flash that file here or use the official updater. <a href="https://intellijel.github.io/firmware/">Intellijel Firmware Updater</a></p></div>
+  </section>
+  <section class="work-section" aria-label="Patch and install">
+    <div class="work-card" id="patcher"><p class="kicker">Step 1 · Local file</p><h2>Build your firmware</h2>
+      <ol class="prep">
+        <li>Download <code>Sealegs.1.3.5.0.bin</code> from the <a href="https://github.com/intellijel/firmware/tree/master/bin">official Intellijel firmware directory</a>.</li>
+        <li>Open that file in <a href="https://www.thisisbribery.com/sealeggs/">BRIBERY’s Seal Eggs patcher</a>. Select Live reverse, Character, Digi Doppler, Tape pickup, BBD Light, Seal Beads and Microloops. Use the full build with or without Tape Bright, then download it.</li>
+        <li>Select that <strong>full Seal Eggs file</strong> below. Save the finished <code>Sealegs.1.3.5.0+c.bin</code>. Only the final file needs flashing.</li>
+      </ol>
+      <redux-patcher></redux-patcher>
+    </div>
+    <div class="work-card" id="flasher"><p class="kicker">Step 2 · USB</p><h2>Flash your Sealegs</h2>
+      <p>Use desktop Chrome or Edge and a USB data cable. Power off the rack, connect the computer to the <strong>rear USB port</strong>, then hold the <strong>rear BOOT button</strong> as you power on. Release BOOT and choose your saved Redux file below. After the write and readback verification, use <strong>Restart module</strong>, then power down, disconnect USB and power on normally.</p>
+      <redux-flasher></redux-flasher>
+    </div>
+    <noscript><p>Enable JavaScript to build or flash firmware. The guides and official updater links are available below.</p></noscript>
+  </section>
+  <details class="how"><summary>How the patch and USB verification work</summary><div>
+    <p>The first patch is made at BRIBERY’s site. Here, your browser verifies the full Seal Eggs file’s SHA-256, applies our Redux differences to a copy in memory and checks the result against the tested v0.6 release hash. Both supported input variants produce the identical final file. This site supplies the Redux delta only. Your selected file stays on this computer.</p>
+    <p>The USB step independently verifies the file you select. The updater checks the device’s flash layout, writes the image and reads it back for comparison. Keep power and USB connected until the updater reports completion. Restore stock before seeking official product support. <a href="https://github.com/intellijel/firmware/blob/master/docs/Sealegs.html">Intellijel’s Sealegs boot procedure</a></p>
+    <dl class="hashes"><dt>Stock SHA-256</dt><dd><code>ca90eb8f0d7e491d548597fab696bca6d54f30b8bbda5b669c3a426508d8adcf</code></dd><dt>Redux SHA-256</dt><dd><code>0eec5c430a07f188f76a4efe243d1f160b7453ffdf0912da6f56614dbfb6de8f</code></dd></dl>
+  </div></details>
+  <section id="features" class="section">
+    <div class="section-title"><p class="kicker">Beyond stock</p><h2>What changes on the panel</h2></div>
+    <p class="lead">BRIBERY built Seal Eggs on Intellijel’s stereo delay. Redux gives the existing sounds independent switches and adds new ways to play Digi and Beads.</p>
+    <div class="table-scroll"><table><thead><tr><th scope="col">Model or control</th><th scope="col">From BRIBERY’s Seal Eggs</th><th scope="col">Added in Redux</th></tr></thead>
+      <tbody>
+      <tr><th scope="row">All three models</th><td>Live reverse while the delay keeps recording. FREEZE can switch between reverse and native Freeze. The NOISE control can take on an extra character.</td><td>Choose Noise or Character separately for Tape, BBD and Digi. A front-panel options layer remembers your choices after power-off.</td></tr>
+      <tr><th scope="row">Tape</th><td>Grunge on NOISE, faster response to TIME moves, and a brighter tone supplied in a separate build.</td><td>Select Stock or Bright tone and Stock or Fast pickup independently in one image.</td></tr>
+      <tr><th scope="row">BBD</th><td>Chip decay on NOISE. Light raises the internal filter ceiling from 4.2 to 12 kHz. Microloops adds Octaves, Shuffle and Drone, each with four variations.</td><td>Switch the native BBD filter between Stock and Light. The three Microloops algorithms use BRIBERY’s original processing.</td></tr>
+      <tr><th scope="row">Digi delay</th><td>Data corruption on NOISE and Doppler pitch bends with semitone steps on larger TIME changes.</td><td>Switch between Stock, continuous Smooth, original Stepped and the two-second Pitch Throw. Quietly reposition TIME/L in all three pitch modes.</td></tr>
+      <tr><th scope="row">Seal Beads</th><td>A playable granular engine adapted from Émilie Gillet’s Beads and stmlib, with grain pitch, density, overlap, spray, reverse and freeze.</td><td>Two additional recording qualities, Cold Digital and Sunny Tape. Change the selection at any time. It takes effect on the next entry to Beads.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="play-grid"><article><h3>Open the options layer</h3><p>Hold MOD SYNC alone for about one second, then release. The MOD light breathes white, alternating with teal in Beads or orange in Microloops. Tap buttons to change an option. Tap MOD SYNC again to save and exit. A green acknowledgment follows a successful changed-settings write.</p><p>To enter or leave an alternate engine, hold FREEZE/ALT + DELAY SYNC for about a second during normal play. Use BBD for Microloops and DIGI for Beads.</p></article>
+    <article><h3>Launch a Pitch Throw</h3><p>In Digi options, tap DELAY SYNC until magenta, then exit. Rest TIME/L briefly and move it about 2% or more. A shorter time pitches the echo up, a longer time pitches it down. The echo bends roughly five semitones and fades over two seconds above your regular delay.</p><p>Hold FREEZE/ALT in normal play to reposition TIME/L quietly. On release, the main delay waits until the slider crosses its old value. An active throw finishes its fade.</p></article></div>
+    <details><summary>Option buttons and LED colors</summary><div>
+      <table><thead><tr><th>Model</th><th>FREEZE</th><th>TAP</th><th>DELAY SYNC</th></tr></thead><tbody>
+      <tr><th>Tape</th><td>Noise · blue<br>Character · amber</td><td>Stock · blue<br>Bright · amber</td><td>Stock · blue<br>Fast · amber</td></tr>
+      <tr><th>BBD</th><td>Noise · blue<br>Character · amber</td><td>Stock · blue<br>Light · amber</td><td>Unassigned · dark</td></tr>
+      <tr><th>Digi</th><td>Noise · blue<br>Character · amber</td><td>Digital · blue<br>Cold · green<br>Sunny · amber</td><td>Stock · blue<br>Smooth · cyan<br>Stepped · amber<br>Throw · magenta</td></tr>
+      </tbody></table><p>A blinking Beads quality light indicates a pending change. Re-entering that engine clears its recording. Native Digi also gains an ALT diagnostic display for peak processing load and timing pressure.</p>
+    </div></details>
+  </section>
+  <section id="guides" class="section">
+    <div class="section-title"><p class="kicker">Printable PDFs</p><h2>At the rack</h2></div>
+    <div class="guide-list">
+      <article><div><h3>Sealegs quick reference</h3><p>The everyday panel, stock controls and Redux performance gestures together.</p></div><div><a href="docs/sealegs-redux-quick-reference-letter.pdf">US Letter</a><a href="docs/sealegs-redux-quick-reference-a4.pdf">A4</a></div></article>
+      <article><div><h3>New features quick card</h3><p>The additions over stock, with option colors and the controls for each new mode.</p></div><div><a href="docs/sealegs-redux-new-features-letter.pdf">US Letter</a><a href="docs/sealegs-redux-new-features-a4.pdf">A4</a></div></article>
+      <article><div><h3>Feature reference</h3><p>The playing guide to Character, Digi pitch modes, Seal Beads and all twelve Microloops variations.</p></div><div><a href="docs/sealegs-redux-feature-reference-letter.pdf">US Letter</a><a href="docs/sealegs-redux-feature-reference-a4.pdf">A4</a></div></article>
+    </div>
+  </section>
+  <section class="credits section"><div class="section-title"><p class="kicker">Project notes</p><h2>Credits and release terms</h2></div>
+    <div class="play-grid"><article><h3>Built on Seal Eggs</h3><p><strong>BRIBERY</strong> created the upstream modifications, adapted Seal Beads to Sealegs and wrote Microloops. <strong>Émilie Gillet</strong> created Mutable Instruments Beads and stmlib. <strong>Intellijel</strong> designed Sealegs and supplies the original firmware and updater.</p><p><a href="https://www.thisisbribery.com/sealeggs/">BRIBERY’s Seal Eggs</a> · <a href="https://ko-fi.com/thisisbribery">Support BRIBERY</a> · <a href="https://github.com/pichenettes/eurorack">Mutable Instruments source</a></p>
+      <p>Redux firmware changes, release tools and field guides by <strong>vwal</strong>. <a href="https://www.buymeacoffee.com/vwal">Buy me a coffee</a></p></article>
+    <article><h3>Free to use and share</h3><p>Our original Redux contributions use an attribution and no-sale license. Intellijel has an express exception for official commercial integration and distribution. You can sell music made with this firmware. Third-party components keep their existing terms, including MIT for Beads/stmlib and ISC for webdfu.</p>
+      <p><a href="LICENSE.txt">Redux license</a> · <a href="notices/Beads-MIT.txt">Beads MIT notice</a> · <a href="https://github.com/vwal/seal-eggs-redux/blob/main/THIRD-PARTY.md">All credits and notices</a></p></article></div>
+    <details><summary>What was tested</summary><div><p>This is the v0.6 audio image under its public release name. An independent build reproduced it byte for byte. The 27 boardless test suites exercise audio processing, button gestures, saved preferences and timing diagnostics. Hardware listening covered sound characters, Pitch Throw, Beads and all three Microloops ranges with a clock. Physical timing and every patch combination have not been measured.</p><p>For clocked Microloops, try a short trigger per quarter note. At 120 BPM, a simulated 50% square wave could register twice per beat. A 10 ms trigger registered once. The audition above uses that short-trigger timing.</p></div></details>
+  </section>
+</div></main>
+<footer><div class="wrap footer-in"><div><strong>Seal Eggs Redux</strong><p>Independent community firmware · 1.3.5.0+c</p></div><div><p>This project contains carefully tested AI-generated code.</p><a href="https://github.com/vwal/seal-eggs-redux">GitHub repository</a> · <a href="https://www.buymeacoffee.com/vwal">Buy Me a Coffee</a></div></div></footer>
+</body></html>

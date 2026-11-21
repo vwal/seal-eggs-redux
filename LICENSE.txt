@@ -1,0 +1,58 @@
+Seal Eggs Redux Attribution – No Sale License 1.0
+LicenseRef-Seal-Eggs-Redux-No-Sale-1.0
+Copyright (c) 2026 vwal
+
+1. Scope
+These terms apply to original work for which vwal controls the rights in
+Seal Eggs Redux, including the new firmware additions, patches, website,
+reference publications and their copyrightable derivatives. Intellijel
+firmware, BRIBERY's Seal Eggs, Mutable Instruments Beads, stmlib, webdfu
+and other pre-existing material have their own owners and terms. This
+license grants no rights in their firmware, code, trademarks or artwork.
+All independent permissions and applicable third-party notices survive.
+
+2. Grant and attribution
+You may use, study, copy, adapt, merge, compile and share the covered
+work without charge, subject to this license. Include vwal's copyright,
+the complete license and applicable third-party notices with copies or
+substantial portions. Mark your changes. For print, retain a readable
+attribution and link to the full license. Free derivatives must preserve
+these conditions on the covered portions. Use in paid performances,
+studio work, lessons, and the sale or licensing of music and recordings
+made with the module are permitted. The license does not attach to that
+creative output through use of the tools.
+
+3. No sale or paid supply
+Except as permitted in section 4 or by separate written permission, you
+may not supply the covered work or its derivatives for payment, whether
+as a download, update, subscription, paid bundle, product, preinstalled
+module or paid installation, build, modification or hosting service.
+Describing an included component as a free bonus does not remove this
+condition. Unconditional voluntary donations are permitted. Access and
+delivery may not depend on a donation, membership or purchase.
+
+4. Official Intellijel exception
+Intellijel, the manufacturer of Sealegs, may use, modify, incorporate,
+reproduce, sublicense, distribute and sell the covered work in its
+official products, firmware, updates and associated services without
+further permission or a fee. This includes contractors and authorized
+distributors acting on its behalf solely for that official integration
+and distribution, and the subsequent resale of those official products.
+Intellijel may license the resulting products under its own terms while
+preserving the applicable copyright, attribution and license notices.
+This exception overrides the no-sale conditions on vwal's work for those
+uses only. Other rights holders' terms still apply. No endorsement or
+obligation by Intellijel is implied.
+
+5. Warranty and liability
+The covered work is provided as is, without express or implied warranties,
+including merchantability, fitness for a particular purpose and
+noninfringement. To the extent permitted by applicable law, the authors
+and rights holders shall not be liable for any claim, damage or liability
+arising out of the work, its distribution or its use. Nothing in this
+license limits rights that applicable law makes non-excludable.
+
+This custom license applies only to Redux contributions. The MIT permissions
+for Beads/stmlib and the Intellijel updater libraries and the ISC permissions
+for webdfu remain in effect for their respective components. For upstream
+credits and notices see THIRD-PARTY.md.
