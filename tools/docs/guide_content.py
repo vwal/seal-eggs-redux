@@ -147,7 +147,7 @@ n2 = page("The two alternate engines", "BRIBERY's Seal Beads V2 and Seal Microlo
           P("With the default assignment, tap FREEZE for reverse playback and tap MOD SYNC while holding ALT to hold the recording. Tap DELAY SYNC with ALT for crossed feedback. Hold DELAY SYNC alone about 1 second to clear. MOD SYNC alone toggles triplets."),
           P("In a native model, hold ALT alone. FREEZE shows recent load, DELAY SYNC shows peak Digi load, and MOD SYNC latches Digi timing pressure. In options, the white MOD light marks the overlay and a brief green flash confirms a saved change."), credit_short)
 
-r1 = page("Model settings and live reverse", "A playing reference for 1.3.5.0+c, the public release of development build v0.6. Start here to combine stock delay behaviour with Seal Eggs features.",
+r1 = page("Model settings and live reverse", "A playing reference for 1.3.5.0+c. Start here to combine stock delay behaviour with Seal Eggs features.",
           open_options, options, H("Model voicing and the NOISE knob"),
           pairs("Choice", "Behaviour", [
             ["Noise / Character", "Noise retains native hiss and crackle. Character assigns BRIBERY's second tone control to NOISE. Tape gains midrange grit, BBD sputters and drops out, and Digi introduces buffer glitches and octave fragments. COLOR remains available."],
@@ -223,7 +223,7 @@ r5 = page("Patches and diagnostics", "Use a stable input, a known clock and the 
 r6 = page("Install or restore firmware", "Build the full Seal Eggs image first, then apply Redux to that image. Keep the original Intellijel file for recovery.",
           H("Prepare the release file"),
           pairs("Step", "On the computer", [
-              ["1  Get stock", 'Download the original <b>Sealegs.1.3.5.0.bin</b> from <link href="https://github.com/intellijel/firmware/tree/master/bin" color="#165F56"><u>Intellijel’s official firmware repository</u></link>. Keep a copy for recovery and use this file as input to BRIBERY’s patcher.'],
+              ["1  Get stock", 'Get the <link href="https://intellijel.github.io/firmware/" color="#165F56"><u>original Sealegs.1.3.5.0.bin</u></link> from Intellijel. The file is also in the <link href="https://github.com/intellijel/firmware/tree/master/bin" color="#165F56"><u>official firmware download directory</u></link>. Keep a copy for recovery and use it as input to BRIBERY’s patcher.'],
               ["2  Build Seal Eggs", 'Open <link href="https://www.thisisbribery.com/sealeggs/" color="#165F56"><u>BRIBERY’s Seal Eggs patcher</u></link>, load stock and enable Live Reverse, Character, Digi Doppler, Tape Pickup, BBD Light, Seal Beads and Seal Microloops. Leave the separate Tape Bright extra off for the standard full base. Download the full Seal Eggs file.'],
               ["3  Build Redux", 'Open the <link href="https://vwal.github.io/seal-eggs-redux/" color="#165F56"><u>Redux release site</u></link> and select your full Seal Eggs file. The browser checks its hash, applies the Redux delta and verifies the output. Save <b>Sealegs.1.3.5.0+c.bin</b>. Select that saved file in the flasher when you want to write it to the module.'],
           ], .24),
@@ -234,7 +234,7 @@ r6 = page("Install or restore firmware", "Build the full Seal Eggs image first, 
               ["6  Restart", "After the page reports a full match, start the verified firmware. Power the rack off, disconnect USB, then power on normally. Check the MOD SYNC options layer and audio."],
           ], .24),
           H("Restore official 1.3.5.0"), P('Select your original stock file in the flasher, or use <link href="https://intellijel.github.io/firmware/" color="#165F56"><u>Intellijel’s updater</u></link>. Repeat the rear BOOT procedure. If a write or readback fails, reconnect in BOOT mode and perform the complete write again before restarting.'),
-          N("Release identity", "The public name 1.3.5.0+c identifies the tested v0.6 build. The firmware bytes match that build. Both official stock and Redux are 589,964 bytes, so the page checks SHA-256 to distinguish them."),
+          N("Release identity", "The flasher identifies Seal Eggs Redux 1.3.5.0+c by its SHA-256 digest. The official stock and Redux images are both 589,964 bytes."),
           P("Seal Eggs Redux is independent community firmware, supplied as-is. Flash at your own risk. Emulation and physical-module tests covered the release. Individual patches, USB equipment and clock sources can behave differently. Flashing replaces program memory. Record any settings you need before changing firmware."))
 
 DOCUMENTS = [

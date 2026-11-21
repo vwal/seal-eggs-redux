@@ -16,7 +16,7 @@ class ReduxPatcher extends HTMLElement {
         <input type="file" accept=".bin,application/octet-stream" aria-describedby="patch-feedback">
       </label>
       <p class="tool-status" id="patch-feedback" role="status" aria-live="polite">Choose the full Seal Eggs build, with or without Tape Bright. Your file stays in this browser.</p>
-      <p class="tool-help" data-guide hidden>Open <a href="https://www.thisisbribery.com/sealeggs/" target="_blank" rel="noopener noreferrer">BRIBERY’s patcher</a> and choose <a href="https://github.com/intellijel/firmware/tree/master/bin" target="_blank" rel="noopener noreferrer">Intellijel’s original Sealegs.1.3.5.0.bin</a>. Enable Live reverse, Character, Digi Doppler, Tape pickup, BBD Light, Seal Beads and Seal Microloops. Tape Bright can be on or off. Download the resulting .bin and choose it here.</p>
+      <p class="tool-help" data-guide hidden>Open <a href="https://www.thisisbribery.com/sealeggs/" target="_blank" rel="noopener noreferrer">BRIBERY’s patcher</a> and choose <a href="https://intellijel.github.io/firmware/" target="_blank" rel="noopener noreferrer">Intellijel’s original Sealegs.1.3.5.0.bin</a>. Enable Live reverse, Character, Digi Doppler, Tape pickup, BBD Light, Seal Beads and Seal Microloops. Tape Bright can be on or off. Download the resulting .bin and choose it here.</p>
       <div class="tool-actions">
         <button type="button" class="button" data-build disabled>Build Redux firmware</button>
         <a class="button" data-download download="Sealegs.1.3.5.0+c.bin" hidden>Download patched .bin</a>

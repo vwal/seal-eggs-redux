@@ -31,9 +31,15 @@ Describing an included component as a free bonus does not remove this
 condition. Unconditional voluntary donations are permitted. Access and
 delivery may not depend on a donation, membership or purchase.
 
-4. Official Intellijel exception
+4. Official Intellijel exception for the Redux firmware delta
+This exception applies only to vwal's original firmware changes supplied
+in the Redux delta over BRIBERY's Seal Eggs. Permission to use or distribute
+BRIBERY's original code must come from BRIBERY or another independent legal
+basis. The terms for all other third-party portions apply independently,
+including when they are present in a combined firmware image.
+
 Intellijel, the manufacturer of Sealegs, may use, modify, incorporate,
-reproduce, sublicense, distribute and sell the covered work in its
+reproduce, sublicense, distribute and sell those Redux changes in its
 official products, firmware, updates and associated services without
 further permission or a fee. This includes contractors and authorized
 distributors acting on its behalf solely for that official integration

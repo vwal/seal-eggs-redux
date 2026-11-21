@@ -6,11 +6,11 @@ Independent community firmware for Intellijel Sealegs. Redux adds per-model sett
 
 ## Install
 
-1. Obtain the original [Sealegs.1.3.5.0.bin from Intellijel](https://github.com/intellijel/firmware/tree/master/bin). Keep a copy for recovery.
+1. Obtain the [original Sealegs.1.3.5.0.bin](https://intellijel.github.io/firmware/) from [Intellijel’s firmware directory](https://github.com/intellijel/firmware/tree/master/bin). Keep a copy for recovery.
 2. At [BRIBERY’s Seal Eggs patcher](https://www.thisisbribery.com/sealeggs/), enable Live reverse, Character, Digi Doppler, Tape pickup, BBD Light, Seal Beads and Seal Microloops. Save the full build. Both Tape Bright choices are supported by the Redux web patcher.
 3. Choose that local Seal Eggs file in the [Redux patcher](https://vwal.github.io/seal-eggs-redux/#patcher). Download the verified result, then select the saved file in the USB section. Only this final image needs to be installed.
 
-The release image is byte-identical to development build v0.6 (589,964 bytes). Its SHA-256 is `0eec5c430a07f188f76a4efe243d1f160b7453ffdf0912da6f56614dbfb6de8f`. The site supplies a 9,822-byte difference file for the Redux step. It contains no complete firmware image or upstream patch dataset. Patching runs locally. Flashing uses desktop Chrome or Edge and a USB data cable. Follow the on-page instructions. Modified firmware is provided as is and installed at your own risk.
+Both full Seal Eggs variants produce the same 589,964-byte Redux 1.3.5.0+c release. Its SHA-256 is `0eec5c430a07f188f76a4efe243d1f160b7453ffdf0912da6f56614dbfb6de8f`. The site supplies a 9,822-byte difference file for the Redux step. It contains no complete firmware image or upstream patch dataset. Patching runs locally. Flashing uses desktop Chrome or Edge and a USB data cable. Follow the on-page instructions. Modified firmware is provided as is and installed at your own risk.
 
 ## Publications
 
@@ -31,4 +31,4 @@ The release image is byte-identical to development build v0.6 (589,964 bytes). I
 
 BRIBERY created [Seal Eggs](https://www.thisisbribery.com/sealeggs/). Seal Beads incorporates [Émilie Gillet’s Beads and stmlib](https://github.com/pichenettes/eurorack) under MIT. Intellijel made Sealegs and publishes the original firmware and updater. [Third-party notices](THIRD-PARTY.md).
 
-Original Redux additions are free to use, modify and share under the [Redux Attribution – No Sale License](LICENSE.txt), including an exception for official commercial integration by Intellijel. Third-party license terms remain with their respective work. This project contains carefully tested AI-generated code. [Buy Me a Coffee](https://www.buymeacoffee.com/vwal).
+Original Redux additions are free to use, modify and share under the [Redux Attribution – No Sale License](LICENSE.txt), including an official Intellijel commercial-integration exception for vwal’s original firmware changes in the Redux delta over Seal Eggs. BRIBERY’s code and all other third-party components require their own applicable permissions. This project contains carefully tested AI-generated code. [Buy Me a Coffee](https://www.buymeacoffee.com/vwal).

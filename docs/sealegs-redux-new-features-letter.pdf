@@ -175,7 +175,7 @@ endobj
 18 0 obj
 <<
 /Type /EmbeddedFile
-/Length 3274
+/Length 3668
 >>
 stream
 Seal Eggs Redux Attribution – No Sale License 1.0
@@ -211,9 +211,15 @@ Describing an included component as a free bonus does not remove this
 condition. Unconditional voluntary donations are permitted. Access and
 delivery may not depend on a donation, membership or purchase.
 
-4. Official Intellijel exception
+4. Official Intellijel exception for the Redux firmware delta
+This exception applies only to vwal's original firmware changes supplied
+in the Redux delta over BRIBERY's Seal Eggs. Permission to use or distribute
+BRIBERY's original code must come from BRIBERY or another independent legal
+basis. The terms for all other third-party portions apply independently,
+including when they are present in a combined firmware image.
+
 Intellijel, the manufacturer of Sealegs, may use, modify, incorporate,
-reproduce, sublicense, distribute and sell the covered work in its
+reproduce, sublicense, distribute and sell those Redux changes in its
 official products, firmware, updates and associated services without
 further permission or a fee. This includes contractors and authorized
 distributors acting on its behalf solely for that official integration
@@ -261,7 +267,7 @@ endobj
 22 0 obj
 <<
 /Type /EmbeddedFile
-/Length 1776
+/Length 1926
 >>
 stream
 # Credits and notices
@@ -272,7 +278,7 @@ stream
 | Seal Eggs, live reverse, Character, Stepped Doppler, Tape Fast/Bright, BBD Light, Seal Beads and Seal Microloops | [BRIBERY](https://www.thisisbribery.com/sealeggs/), [source project](https://github.com/thisisbribery/SealEggs_v1). Owners supply a compatible full Seal Eggs image. This patcher contains only our Redux delta and applies it locally. Original upstream work retains its respective rights. |
 | Beads and stmlib inside Seal Beads | [Émilie Gillet / Mutable Instruments](https://github.com/pichenettes/eurorack). The [MIT notice](notices/Beads-MIT.txt) is reproduced with its copyright. BRIBERY adapted the engine to Sealegs. |
 | Browser DFU libraries | Intellijel's updater and the webdfu authors. See the [Intellijel notice](vendor/INTELLIJEL-LICENSE.txt) and [webdfu notice](vendor/WEBDFU-LICENSE.txt). [Intellijel source](https://github.com/intellijel/firmware/tree/4201c75802659e42be79bd3c436807ef2f1a8835). |
-| Redux additions, patcher, listening example and new guides | Copyright © 2026 vwal. [Redux Attribution – No Sale License](LICENSE.txt), including an exception for official Intellijel integration. |
+| Redux additions, patcher, listening example and new guides | Copyright © 2026 vwal. [Redux Attribution – No Sale License](LICENSE.txt), with an official Intellijel commercial-integration exception limited to vwal’s original firmware changes in the Redux delta over Seal Eggs. Rights in BRIBERY’s code and other third-party work are separate. |
 
 Sealegs and Mutable Instruments names identify the respective products. This independent release has no manufacturer endorsement. Consult the third-party notices for the terms applicable to each contribution. Professional music-making and voluntary donations are permitted.
 
@@ -423,17 +429,17 @@ xref
 0000008848 00000 n 
 0000008932 00000 n 
 0000009362 00000 n 
-0000012709 00000 n 
-0000012787 00000 n 
-0000012831 00000 n 
-0000013019 00000 n 
-0000014868 00000 n 
-0000014952 00000 n 
-0000016510 00000 n 
-0000016593 00000 n 
-0000017746 00000 n 
-0000017838 00000 n 
-0000018638 00000 n 
+0000013103 00000 n 
+0000013181 00000 n 
+0000013225 00000 n 
+0000013413 00000 n 
+0000015412 00000 n 
+0000015496 00000 n 
+0000017054 00000 n 
+0000017137 00000 n 
+0000018290 00000 n 
+0000018382 00000 n 
+0000019182 00000 n 
 trailer
 <<
 /Size 30
@@ -442,5 +448,5 @@ trailer
 /ID [ <b9b4ef19955b7a07932a7e7a2ce6a637> <b9b4ef19955b7a07932a7e7a2ce6a637> ]
 >>
 startxref
-18726
+19270
 %%EOF
