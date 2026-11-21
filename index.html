@@ -42,12 +42,12 @@
   <section id="installation" class="before" aria-labelledby="before-title">
     <div><p class="kicker">Installation</p><h2 id="before-title">Before you flash</h2></div>
     <div><p>This community release has been tested on Sealegs hardware and in 27 automated firmware suites. It comes <strong>as is</strong>. Install it at your own risk. Custom firmware may affect warranty coverage. Intellijel supports its official firmware.</p>
-    <p>Keep the <a href="https://intellijel.github.io/firmware/">original <code>Sealegs.1.3.5.0.bin</code></a> for recovery and note any settings you want to recreate. To return to stock, flash that file here or use the <a href="https://intellijel.github.io/firmware/">Intellijel Firmware Updater</a>.</p></div>
+    <p>Keep the original <code>Sealegs.1.3.5.0.bin</code> for recovery and note any settings you want to recreate. You can <a href="#stock-firmware">return to the stock firmware</a> at any time.</p></div>
   </section>
   <section class="work-section" aria-label="Patch and install">
     <div class="work-card" id="patcher"><p class="kicker">Step 1 · Local file</p><h2>Build your firmware</h2>
       <ol class="prep">
-        <li>Download the <a href="https://intellijel.github.io/firmware/">original <code>Sealegs.1.3.5.0.bin</code></a> from <a href="https://github.com/intellijel/firmware/tree/master/bin">Intellijel’s firmware directory</a>.</li>
+        <li>Download the original <code>Sealegs.1.3.5.0.bin</code> from <a href="https://github.com/intellijel/firmware/tree/master/bin">Intellijel’s firmware directory</a>.</li>
         <li>Select the original file below to build Redux directly. Save <code>Sealegs.1.3.5.0+c.bin</code> and use it in the USB step.</li>
       </ol>
       <redux-patcher></redux-patcher>
@@ -94,6 +94,10 @@
       <article><div><h3>New features quick card</h3><p>The additions over stock, with option colors and the controls for each new mode.</p></div><div><a href="docs/sealegs-redux-new-features-letter.pdf">US Letter</a><a href="docs/sealegs-redux-new-features-a4.pdf">A4</a></div></article>
       <article><div><h3>Feature reference</h3><p>The playing guide to Character, Digi pitch modes, Seal Beads and all twelve Microloops variations.</p></div><div><a href="docs/sealegs-redux-feature-reference-letter.pdf">US Letter</a><a href="docs/sealegs-redux-feature-reference-a4.pdf">A4</a></div></article>
     </div>
+  </section>
+  <section id="stock-firmware" class="section" aria-labelledby="stock-firmware-title">
+    <h2 id="stock-firmware-title">Back to the stock firmware</h2>
+    <p>To restore the official firmware, open the <a href="https://intellijel.github.io/firmware/">Intellijel Firmware Updater</a>, select <strong>Sealegs</strong> and follow the instructions to reflash your module.</p>
   </section>
   <section class="credits section"><div class="section-title"><p class="kicker">Project notes</p><h2>Credits and release terms</h2></div>
     <div class="play-grid"><article><h3>Built on Seal Eggs</h3><p><strong>BRIBERY</strong> created the upstream modifications, adapted Seal Beads to Sealegs and wrote Microloops. <strong>Émilie Gillet</strong> created Mutable Instruments Beads and stmlib. <strong>Intellijel</strong> designed Sealegs and supplies the original firmware and updater.</p><p><a href="https://www.thisisbribery.com/sealeggs/">BRIBERY’s Seal Eggs</a> · <a href="https://ko-fi.com/thisisbribery">Support BRIBERY</a> · <a href="https://github.com/pichenettes/eurorack">Mutable Instruments source</a></p>

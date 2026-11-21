@@ -16,7 +16,7 @@ class ReduxPatcher extends HTMLElement {
         <input type="file" accept=".bin,application/octet-stream" aria-describedby="patch-feedback">
       </label>
       <p class="tool-status" id="patch-feedback" role="status" aria-live="polite">Choose the official Sealegs.1.3.5.0.bin. Your file stays in this browser.</p>
-      <p class="tool-help" data-guide hidden>Get the original Sealegs 1.3.5.0 file from <a href="https://intellijel.github.io/firmware/" target="_blank" rel="noopener noreferrer">Intellijel</a>. The full Seal Eggs build is also supported, with or without Tape Bright.</p>
+      <p class="tool-help" data-guide hidden>Get the original <code>Sealegs.1.3.5.0.bin</code> from <a href="https://github.com/intellijel/firmware/tree/master/bin" target="_blank" rel="noopener noreferrer">Intellijel’s firmware directory</a>. The full Seal Eggs build is also supported, with or without Tape Bright.</p>
       <div class="tool-actions">
         <button type="button" class="button" data-build disabled>Build Redux firmware</button>
         <a class="button" data-download download="Sealegs.1.3.5.0+c.bin" hidden>Download patched .bin</a>
