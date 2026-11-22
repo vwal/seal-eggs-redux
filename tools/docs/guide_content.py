@@ -223,7 +223,7 @@ r5 = page("Patches and diagnostics", "Use a stable input, a known clock and the 
 r6 = page("Install or restore firmware", "Patch your original Intellijel file directly on the Redux site. Keep the stock file for recovery.",
           H("Prepare the release file"),
           pairs("Step", "On the computer", [
-              ["1  Get stock", 'Get the <link href="https://intellijel.github.io/firmware/" color="#165F56"><u>original Sealegs.1.3.5.0.bin</u></link> from Intellijel. The file is also in the <link href="https://github.com/intellijel/firmware/tree/master/bin" color="#165F56"><u>official firmware download directory</u></link>. Keep this stock file for recovery.'],
+              ["1  Get stock", 'Download the original <b>Sealegs.1.3.5.0.bin</b> from Intellijel’s firmware directory at <link href="https://github.com/intellijel/firmware/tree/master/bin" color="#165F56"><u>github.com/intellijel/firmware/tree/master/bin</u></link>.'],
               ["2  Build Redux", 'Open the <link href="https://vwal.github.io/seal-eggs-redux/" color="#165F56"><u>Redux release site</u></link>. In the patcher, select your official <b>Sealegs.1.3.5.0.bin</b>. Build the patched image. The browser checks the stock file, applies the patch locally and verifies the result.'],
               ["3  Save the result", 'Download <b>Sealegs.1.3.5.0+c.bin</b>. Choose this saved file in the flasher when you are ready to write it to the module.'],
           ], .24),
@@ -233,7 +233,7 @@ r6 = page("Install or restore firmware", "Patch your original Intellijel file di
               ["5  Connect and write", "Confirm the attached module is Sealegs. In the browser's device picker, select the STM32 bootloader or DFU device. Start the flash and keep the computer awake, cable connected and module powered through readback verification."],
               ["6  Restart", "After the page reports a full match, start the verified firmware. Power the rack off, disconnect USB, then power on normally. Check the MOD SYNC options layer and audio."],
           ], .24),
-          H("Restore official 1.3.5.0"), P('Select your original stock file in the flasher, or use <link href="https://intellijel.github.io/firmware/" color="#165F56"><u>Intellijel’s updater</u></link>. Repeat the rear BOOT procedure. If a write or readback fails, reconnect in BOOT mode and perform the complete write again before restarting.'),
+          H("Back to the stock firmware"), P('Open the official Intellijel Firmware Updater at <link href="https://intellijel.github.io/firmware/" color="#165F56"><u>intellijel.github.io/firmware/</u></link>. Select <b>Sealegs</b> and follow the instructions to reflash your module. If a write or readback fails, reconnect in BOOT mode and repeat the complete write before restarting.'),
           N("Release identity", "The flasher identifies Seal Eggs Redux 1.3.5.0+c by its SHA-256 digest. The official stock and Redux images are both 589,964 bytes."),
           P("Seal Eggs Redux is independent community firmware, supplied as-is. Flash at your own risk. Emulation and physical-module tests covered the release. Individual patches, USB equipment and clock sources can behave differently. Flashing replaces program memory. Record any settings you need before changing firmware."))
 
